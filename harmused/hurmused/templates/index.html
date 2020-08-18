@@ -9,24 +9,12 @@
 
                 </div>
             </div>
-            <div class="navigation">
-                <div class="navigation_prev">
-                    <div class="navigation_prev_icon">
-
-                    </div>
-                </div>
-                <div class="navigation_next">
-                    <div class="navigation_next_icon">
-
-                    </div>
-                </div>
-            </div>
             <div class="progress_bar">
                 <div class="progress_bar_title">---</div>
                 <div class="progress_bar_stripe">
                     <div class="progress_bar_container">
                         <div class="progress_bar_container_percentage">
-
+    
                         </div>
                     </div>
                 </div>
@@ -87,7 +75,8 @@ class Player {
         textContent: f.name,
         class: 'fileEntity',
         handlers: {
-          click: this.play.bind(this, null, i)
+          click: this.play.bind(this, null, i),
+          progressBarMove: this.setProgress
         }
       });
       createElem({
@@ -95,6 +84,26 @@ class Player {
         appendTo: playlistFileContainer,
         textContent: '--:--',
         class: 'fileEntity_duration',
+      })
+      let progressbarr = createElem({
+          type: 'div',
+          appendTo: playlistFileContainer,
+          class: 'progress_bar'
+      })
+      let progressbarrstrip = createElem({
+          type: 'div',
+          appendTo: progressbarr,
+          class: 'progress_bar_stripe'
+      })
+      let progressbarrcont = createElem({
+          type: 'div',
+          appendTo: progressbarrstrip,
+          class: 'progress_bar_container'
+      })
+      createElem({
+          type: 'div',
+          appendTo: progressbarrcont,
+          class: 'progress_bar_container_percentagee',
       })
     });
   }
@@ -265,6 +274,9 @@ function createElem(config) {
 </script>
 
 <style>
+.fileEntity .progress_bar{
+    float: right;
+} 
 .player {
   width: 600px;
   margin: 20px auto 0 auto;
@@ -398,6 +410,7 @@ function createElem(config) {
 }
 .fileEntity_duration {
   float: right;
+  width: 30px;
 }
 .fileEntity:hover {
   cursor: pointer;
