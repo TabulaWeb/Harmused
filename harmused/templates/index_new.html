@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name ="viewport" content="width=device-width, intitial-scale=1.0, maximum-scale=1.0,minimal-ul">
+		{% load static %}
+	<link rel="shortcut icon" href="{% static 'assets/media/favicon.ico' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<script src="{% static 'assets/js/jquery.js' %}"></script>
+	<script src="{% static 'assets/js/block_view.js' %}"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- <div class="stringG string" >
+	
+</div>
+<div class="stringD string">
+	
+</div>
+<div class="stringA string">
+	
+</div>
+<div class="stringE string">
+	
+</div> -->
+
+<header>
+<div class="wrapper">
+	<div class="header-block">
+		<div class="logo">
+			<a href="{% url 'index' %}">
+				<img class="circle-logo" src="{% static 'assets/media/logo.svg' %}">
+				<img class="label-logo"  src="{% static 'assets/media/logo_white.png' %}">
+				<!-- <span>#armused</span> -->
+			</a>
+			<p>движение людей со страстью к музыке</p>
+		</div>	
+		<div class="menu-block">
+			<a class="humburger menu-pc" href="{% url 'about' %}">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="items" id="box_humburger">
+				<ul>
+					<li>Контакты</li>
+					<li>О портале</li>
+				</ul>
+			</div>
+			<div class="composition compos">
+				<a>Composition
+					<div class="items" id="box_composition">
+						<ul>
+							<li>Композиторы</li>
+							<li>Произведения</li>
+							<li>Гармония</li>
+						</ul>
+					</div>
+				</a>
+				<!-- <img src="assets/media/arrow_down.svg"> -->
+			</div>
+			<div class="composition design">
+				<a href="">Design
+					<div class="items" id="box_design">
+						<ul>
+							<li>Rehearsal studio</li>
+							<li>Shop store</li>
+							<li>Contest</li>
+						</ul>
+					</div>
+				</a>
+			</div>
+			<div class="song">
+				<img src="{% static 'assets/media/iconPlay.svg' %}">
+				<p>Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>Johann Sebastian Bach</p>
+			</div>
+			<a class="auth" href="{% url 'registrations' %}">
+				<img src="{% static 'assets/media/auth.svg' %}">
+				Auth
+			</a>
+		</div>
+
+	</div>
+</div>
+</header>
+<div class="content">
+	{% block content_main %}
+	{% endblock %}
+</div>
+	
+<footer>
+	<div class="wrapper">
+		<div class="footer-block">
+			<div class="logo-footer">
+				<a href="">
+					<!--<img src="{% static 'assets/media/Harmused.svg' %}">-->
+					<img src="{% static 'assets/media/logo_white.png' %}">
+				</a>
+			</div>
+			<div class="subscribe">
+				<span>S U B S C R I B E</span>
+				<div class="subscribeIcons">
+				<a href="">
+					<img src="{% static 'assets/media/iconVK.svg' %}">
+				</a>
+				<a href="">
+					<img src="{% static 'assets/media/iconTwitter.svg' %}">
+				</a>
+				<a href="">
+					<img src="{% static 'assets/media/iconFB.svg' %}">
+				</a>
+				<a href="">
+					<img src="{% static 'assets/media/iconYouTube.svg' %}">
+				</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
