@@ -73,9 +73,17 @@
 					</div>
 				</a>
 			</div>
-			<div class="song">
-				<img src="{% static 'assets/media/iconPlay.svg' %}">
-				<p>Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>Johann Sebastian Bach</p>
+			<div class="player">
+				<div class="controls">
+					<div class="play_pause">
+						<div class="play_pause_icon play_pause-play">
+		
+						</div>
+					</div>
+					<div class="progress_bar">
+						<div class="progress_bar_title">---</div>
+					</div>
+				</div>
 			</div>
 			<a class="auth" href="{% url 'registrations' %}">
 				<img src="{% static 'assets/media/auth.svg' %}">
@@ -100,6 +108,7 @@
 					<img src="{% static 'assets/media/logo_white.png' %}">
 				</a>
 			</div>
+			<p class="footer_text">© 2020 «Harmused»</p>
 			<div class="subscribe">
 				<span>S U B S C R I B E</span>
 				<div class="subscribeIcons">
@@ -120,6 +129,34 @@
 		</div>
 	</div>
 </footer>
+
+<style>
+.menu-block .player{
+  width: 70%;
+  padding: 0px; 
+  background: none; 
+  border-radius: 10px;
+  margin: 0px;
+}
+
+.menu-block .controls{
+	margin-bottom: 0px;
+}
+
+.menu-block .player{
+	max-width: 200px;
+}
+
+.menu-block .controls .progress_bar{
+	float: inherit;
+	width: -webkit-fill-available;
+}
+.footer_text{
+	font-family: 'Roboto';
+    color: white;
+    align-self: flex-end;
+}
+</style>
 
 </body>
 </html>
