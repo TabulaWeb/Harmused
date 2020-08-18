@@ -176,7 +176,7 @@ class Player {
   }
 
   setProgress(percent = 0, cb) {
-    getByQuery('.progress_bar_container_percentage').style.width = `${percent}%`;
+    getByQuery('.fileEntity-active .progress_bar_container_percentage').style.width = `${percent}%`;
     cb && cb();
   }
 
@@ -274,19 +274,25 @@ function createElem(config) {
 </script>
 
 <style>
+.controls .progress_bar{
+    display: flex;
+    align-items: center;
+}
 .fileEntity .progress_bar{
     float: right;
 } 
 .player {
-  width: 600px;
-  margin: 20px auto 0 auto;
+    width: 70%;
+    padding: 20px 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 30px 0px 30px auto;
 }
 .controls {
   height: 48px;
   margin-bottom: 15px;
-  background-color: #fff;
-  box-shadow: 0 1px 2px #ccc;
   padding: 0 15px;
+  color: white;
 }
 .play_pause {
   position: relative;
@@ -370,17 +376,13 @@ function createElem(config) {
 }
 .progress_bar {
   float: left;
-  width: 450px;
+  width: calc(80% + 20px);
   height: 100%;
   padding: 0 15px;
   box-sizing: border-box;
 }
 .progress_bar_title {
-  float: left;
-  height: 26px;
   width: 100%;
-  font-size: 15px;
-  line-height: 40px;
 }
 .progress_bar_stripe {
   float: left;
@@ -393,17 +395,19 @@ function createElem(config) {
   cursor: pointer;
 }
 .progress_bar_container {
-  height: 100%;
-  background-color: #b8c7d7;
+    height: 100%;
+    /* background-color: #b8c7d7; */
+    border-bottom: 2px dotted #b8c7d7;
 }
 .progress_bar_container_percentage {
-  height: 100%;
-  width: 0;
-  background-color: #577ca1;
+    height: 100%;
+    width: 0;
+    /* background-color: #577ca1; */
+    border-bottom: 2px solid #577ca1;
+    z-index: 12;
 }
 .playlist {
-  background-color: #fff;
-  box-shadow: 0 1px 2px #ccc;
+  color: white;
 }
 .fileEntity {
   padding: 15px;
@@ -414,10 +418,10 @@ function createElem(config) {
 }
 .fileEntity:hover {
   cursor: pointer;
-  background-color: #eee;
+  background-color: rgba(123, 123, 123, 0.2);
 }
 .fileEntity-active {
-  background-color: #eee;
+  background-color: rgba(123, 123, 123, 0.2);
   transition: 0.3s all ease;
 }
 </style>
