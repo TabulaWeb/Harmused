@@ -1,18 +1,13 @@
 {% extends 'index_new.html' %}
 
 {% block content_main %}
-<div class="container">
+<div class="containerr">
     <div class="player">
         <div class="playlist">
-            <div class="fileEntity"></div>
-            <div class="fileEntity"></div>
-            <div class="fileEntity"></div>
-            <div class="fileEntity"></div>
-            <div class="fileEntity"></div>
+           
         </div>
     </div>
 </div>    
-
 <script>
 'use strict';
 
@@ -63,16 +58,16 @@ class Player {
           progressBarMove: this.setProgress
         }
       });
-      createElem({
-        type: 'div',
-        appendTo: playlistFileContainer,
-        textContent: '--:--',
-        class: 'fileEntity_duration',
-      })
       let progressbarr = createElem({
           type: 'div',
           appendTo: playlistFileContainer,
           class: 'progress_bar'
+      })
+      createElem({
+      type: 'div',
+      appendTo: progressbarr,
+      textContent: '13:48',
+      class: 'fileEntity_duration',
       })
       let progressbarrstrip = createElem({
           type: 'div',
@@ -263,7 +258,9 @@ function createElem(config) {
     align-items: center;
 }
 .fileEntity .progress_bar{
-    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
 } 
 .player {
     width: 70%;
@@ -372,7 +369,7 @@ function createElem(config) {
   float: left;
   height: 22px;
   width: 100%;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 7px 0;
   box-sizing: border-box;
 }
 .progress_bar_stripe:hover {
@@ -394,13 +391,17 @@ function createElem(config) {
   color: white;
 }
 .fileEntity {
+  display: flex;
   padding: 12px;
   margin: 3px;
+  align-items: flex-end;
 }
 .fileEntity_duration {
   float: right;
-  width: 30px;
+  min-width: fit-content;
+  margin-left: 10px;
 }
+
 .fileEntity:hover {
   cursor: pointer;
   background-color: rgba(123, 123, 123, 0.2);
