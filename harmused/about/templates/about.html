@@ -1,66 +1,88 @@
 {% extends 'index_new.html' %}
 
 {% block content_main %}
-    
-        <div class="page_about">
-            <div class="block_left">
-                <div class="bc block_about">
-                    <p>about</p>
-                </div>
-                <div class="bc behavior_rules">
-                    <p>Правила проведения Rumi-Contest 2021:<br>
-                    1 - Видео запись музыкального выступления в формате open air  без использования минусовой фонограммы<br>
+    <div class="page_about">
+        <div class="row_one">
+            <div class="bc block_about">
+                <p>about</p>
+            </div>
+            <div class="bc block_ruleCondect">
+                <p>
+                    Правила проведения Rumi-Contest 2021:<br>
+                    1 - Видео запись музыкального выступления в формате open air без<br> использования минусовой фонограммы<br>
                     2 - Регистрация на портале harmused.com, заполнение профиля<br>
                     участника и загрузка конкурсного видео контента<br>
-                    3 - Принятие участия в борьбе за призовой фонд></p>
-                </div>
-                
-                
-            </div> 
-            <div class="block_right">
-                <div class="bc dox">
-                    <p>docx <span>(дорабатывается)</span>></p>
-                </div>
-                <div class="bc provisions">
-                    <a href="#">положение о проведении конкурса.docx</a><br>
-                    <a href="#">нормативно правовые акты.docx</a>
-                </div>
-            </div>  
+                    3 - Принятие участия в борьбе за призовой фонд
+                </p>
+            </div>
         </div>
+        <div class="row_two">
+            <div class="bc block_docx">
+                <p>docx<br>(дорабатывается)</p>
+            </div>
+            <div class="bc block_competition">
+                <a href="#">положение о проведении конкурса.docx</a><br>
+                <a href="#">нормативно правовые акты.docx</a>
+            </div>
+        </div>
+    </div>
 
-<style>
-.bc{
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 15px;
-}
-.block_about{
-    text-align: center;
-}
-.dox{
-    text-align: center;
-}
-.page_about{
-    display: flex;
-    color: white;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-}
-.block_right{
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-}
-}
-.provisions a{
-    color: white;
-}
+    <style>
+        .page_about{
+            margin: 65px 0px 85px;
+        }
+        .block_ruleCondect{
+            width: 60%;
+        }
+        .block_competition{
+            width: 60%;
+        }
+        .block_about{
+            width: 18%;
+            max-height: 130px;
+            text-align: center;
+        }
+        .block_about p{
+            margin: 0px;
+        }
+        .block_docx{
+            width: 18%;
+            text-align: center;
+        }
+        .bc{
+            padding: 20px 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 25px;
+        }
 
-.block_left{
-    display: flex;
-    
-}
-</style>
+        .bc p{
+            margin-bottom: 0px;
+        }
+
+        .bc a{
+            color: white;
+        }
+
+        .row_one{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .row_two{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        body{
+            height: 100vh!important;
+            background: url(../../static/assets/media/bg_about.png) no-repeat center;
+            display: flex;
+            flex-direction: column;
+            background-size: cover;
+        }
+    </style>
 {% endblock %}
 

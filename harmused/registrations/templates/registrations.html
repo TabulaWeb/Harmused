@@ -1,33 +1,36 @@
 {% extends 'index_new.html' %}
 
 {% block content_main %}
-<div class="container page_register">
-    <div class="block_page_register">
+<div class="page_register">
+    <div class="block_coming">
         <h1>COMING SOON ...</h1>
     </div>
 </div>
 
 <style>
-    .block_page_register{
-      background: rgba(0, 0, 0, 0.6);
-      width: 70%;
-      float: right;
-      padding: 15% 15px;
-      border-radius: 10px;
-      color: #ffffff;
-      text-align: center;
-      font-size: 25px;
-    }
-    .block_page_register h1{
-        font-family: 'Roboto';
-        opacity: 0.7;
-    }
     .page_register{
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: flex-end;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
-    
+    .block_coming{
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px 15px;
+        margin: 65px 0px 85px;
+        width: 70%;
+        margin-left: auto;
+        border-radius: 10px;
+    }
+    .block_coming h1{
+        font-family: 'Arsenal';
+        padding: 25% 0px 25%;
+        font-size: 50px;
+        color: #ffffffb8;
+        text-align: center;
+    }
+
+    body{
+        height: 100vh!important;
+    }
 </style>
 {% endblock%}
