@@ -4,7 +4,11 @@
 <div class="container">
     <div class="player">
         <div class="playlist">
-            
+            <div class="fileEntity"></div>
+            <div class="fileEntity"></div>
+            <div class="fileEntity"></div>
+            <div class="fileEntity"></div>
+            <div class="fileEntity"></div>
         </div>
     </div>
 </div>    
@@ -13,10 +17,7 @@
 'use strict';
 
 const FILES = [
-  'track1',
-  'track2',
-  'track3',
-  'track4'
+  "Chaconne Partita No2 BWV 1004 Hilary Hahn"
 ]
 
 window.addEventListener('DOMContentLoaded', initHandlers);
@@ -55,7 +56,7 @@ class Player {
       let playlistFileContainer = createElem({
         type: 'div',
         appendTo: playlist,
-        textContent: f.name,
+        textContent: "Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn Johann Sebastian Bach",
         class: 'fileEntity',
         handlers: {
           click: this.play.bind(this, null, i),
@@ -155,7 +156,7 @@ class Player {
   }
 
   setTitle(title) {
-    getByQuery('.progress_bar_title').textContent = title;
+    getByQuery('.progress_bar_title').textContent = "Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn Johann Sebastian Bach";
   }
 
   setProgress(percent = 0, cb) {
@@ -365,7 +366,7 @@ function createElem(config) {
   box-sizing: border-box;
 }
 .progress_bar_title {
-  width: 100%;
+  max-width: 276px;
 }
 .progress_bar_stripe {
   float: left;
