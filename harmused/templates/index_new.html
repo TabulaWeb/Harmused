@@ -18,10 +18,8 @@
 <div class="wrapper">
 	<div class="header-block">
 		<div class="logo">
-			<a href="{% url 'index' %}">
-				<img class="circle-logo" src="{% static 'assets/media/logo.svg' %}">
+			<a href="/">
 				<img class="label-logo"  src="{% static 'assets/media/logo_white.png' %}">
-				<!-- <span>#armused</span> -->
 			</a>
 			<p>движение людей со страстью к музыке</p>
 		</div>	
@@ -33,7 +31,7 @@
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<a class="dropdown-item" href="{% url 'registrations' %}">Контакты</a>
-					<a class="dropdown-item" href="{% url 'about' %}">О портале</a>
+					<a class="dropdown-item" href="{% url 'registrations' %}">О портале</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -55,7 +53,7 @@
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<a class="dropdown-item" href="{% url 'registrations' %}">Rehearsal studio</a>
 					<a class="dropdown-item" href="{% url 'registrations' %}">Shop store</a>
-					<a class="dropdown-item" href="{% url 'registrations' %}">Contest</a>
+					<a class="dropdown-item" href="{% url 'about' %}">Contest</a>
 				</div>
 			</div>
 			<div class="song">
@@ -88,7 +86,6 @@
 		<div class="footer-block">
 			<div class="logo-footer">
 				<a href="">
-					<!--<img src="{% static 'assets/media/Harmused.svg' %}">-->
 					<img src="{% static 'assets/media/logo_white.png' %}">
 				</a>
 			</div>
@@ -125,12 +122,28 @@
 </script>
 
 <style>
+.header-block .logo a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 60px;
+}
+.logo a{
+	background-image: url(../static/assets/media/logo.svg);
+	background-repeat: no-repeat;
+}
+
+.button_block button{
+	outline: inherit;
+}
+
 .subscribe{
 	width: 15%;
+	text-align: center;
 }
 
 .subscribe span{
-	letter-spacing: 3.8px;
+	letter-spacing: 0.19vw;
 }
 
 .footer_text{

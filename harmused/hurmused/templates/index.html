@@ -15,162 +15,19 @@
                     3:03
                 </div>
             </a>
-            <a href="#" class="block_music" data-title="Текст песни">
+            {% for musik in musik_posts %}
+            <a href="{{ musik.get_absolute_url }}" class="block_music" data-title="Текст песни">
                 <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
+                    {{ musik.title }}  
                 </div>
                 <div class="dot">
 
                 </div>
                 <div class="music_time">
-                    3:03
+                    {{ musik.play_time }}
                 </div>
             </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
-            <a href="#" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    Драгни<br>
-                    Минус на минус  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    3:03
-                </div>
-            </a>
+            {% endfor %}
         </div>
     </div>
 

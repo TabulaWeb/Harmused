@@ -1,5 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
+from .models import Musik
 
 
-def home(request):
-    return render(request, 'index.html')
+def musik_list(request):
+    musik_posts = Musik.published.all()
+    return render(request, 'index.html', {'musik_posts': musik_posts})
+
+def musik_detail(request, year, month, day, musik):
+    musik = get_list_or_404(Musik, slug=musik, status='published', publish__year=year, publish__month=month, publish__day=day)
+    return render(request, 'musik_detail.html', {'musik': musik})
