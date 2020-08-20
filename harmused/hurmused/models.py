@@ -15,6 +15,7 @@ class Musik(models.Model):
 
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
+    author_sound = models.CharField(max_length=250)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='musik_posts')
     sound_text = models.TextField()
     play_time = models.CharField(max_length=150)
@@ -31,4 +32,4 @@ class Musik(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('musik:musik_detail', args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
+        return reverse('hurmused:musik_detail', args=[self.publish.year, self.publish.month, self.publish.day, self.slug])

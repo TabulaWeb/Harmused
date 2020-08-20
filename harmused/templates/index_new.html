@@ -72,7 +72,32 @@
 				Auth
 			</a>
 		</div>
-
+		<div class="block_contest">
+			<a href="{% url 'registrations' %}" class="contest_info">
+				Info
+			</a>
+			<a href="{% url 'registrations' %}" class="contest_RM">
+				Road map
+			</a>
+			<a href="{% url 'registrations' %}" class="contest_name">
+				Pilot Contest 2020
+			</a>
+			<div class="song">
+				<figure>
+					<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
+					<div class="button_block">
+						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/iconPlay.svg' %}"></button>
+						<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause">Пауза</button> -->
+					</div>
+					<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
+						Johann Sebastian Bach</div>
+				</figure>
+			</div>
+			<a class="auth" href="{% url 'registrations' %}">
+				<img src="{% static 'assets/media/auth.svg' %}">
+				Auth
+			</a>
+		</div>
 	</div>
 </div>
 </header>
@@ -122,6 +147,10 @@
 </script>
 
 <style>
+.block_contest{
+	display: none;
+}
+
 .header-block .logo a {
     display: flex;
     align-items: center;

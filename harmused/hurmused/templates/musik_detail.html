@@ -1,6 +1,25 @@
 {% extends 'index_new.html' %}
 
 {% block content %}
-<h1>DETAIL</h1>
-<h1>{{ musiks.title }}</h1>
+<h1 class="title_sound">{{ musiks.title }}</h1>
+<p class="text_sound">{{ musiks.sound_text }}</p>
+
+<style>
+    .logo a {
+        background-image: url(/../static/assets/media/logo.svg)!important;
+        background-repeat: no-repeat;
+    }
+
+    .title_sound{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    .text_sound{
+        color: white;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
 {% endblock %}
