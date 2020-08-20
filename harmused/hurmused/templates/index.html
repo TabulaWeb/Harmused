@@ -1,6 +1,6 @@
 {% extends 'index_new.html' %}
 
-{% block content_main %}
+{% block content %}
     <div class="page_home">
         <div class="play_list">
             <a href="#" class="block_music" data-title="Текст песни">
@@ -15,16 +15,16 @@
                     3:03
                 </div>
             </a>
-            {% for musik in musik_posts %}
-            <a href="{{ musik.get_absolute_url }}" class="block_music" data-title="Текст песни">
+            {% for musiks in musik_posts %}
+            <a href="{{ musiks.get_absolute_url }}" class="block_music" data-title="Текст песни">
                 <div class="music_tittle">
-                    {{ musik.title }}  
+                    {{ musiks.title }}  
                 </div>
                 <div class="dot">
 
                 </div>
                 <div class="music_time">
-                    {{ musik.play_time }}
+                    {{ musiks.play_time }}
                 </div>
             </a>
             {% endfor %}
