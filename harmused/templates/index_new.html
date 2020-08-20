@@ -60,8 +60,8 @@
 				<figure>
 					<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
 					<div class="button_block">
-						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/iconPlay.svg' %}"></button>
-						<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause">Пауза</button> -->
+						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
+						<button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button>
 					</div>
 					<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
 						Johann Sebastian Bach</div>
@@ -86,8 +86,8 @@
 				<figure>
 					<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
 					<div class="button_block">
-						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/iconPlay.svg' %}"></button>
-						<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause">Пауза</button> -->
+						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
+						<button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button>
 					</div>
 					<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
 						Johann Sebastian Bach</div>
@@ -162,10 +162,21 @@
 	background-repeat: no-repeat;
 }
 
-.button_block button{
-	outline: inherit;
+
+
+.button_block img{
+	width: 30px;
 }
 
+.play_pause_icon{
+	width: 35px;
+}
+
+.button_block button{
+	outline: inherit;
+    background-color: inherit;
+    border: inherit;
+}
 .subscribe{
 	width: 15%;
 	text-align: center;
