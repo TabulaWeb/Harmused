@@ -124,7 +124,6 @@
         }
 
         body{
-            height: 100vh!important;
             background: url(../../static/assets/media/bg_about.png) no-repeat center;
             display: flex;
             flex-direction: column;
@@ -137,8 +136,74 @@
             background-size: contain;
         }
 
+        .dropdown-content a {
+            color: black;
+            padding: 12px 10px!important;
+            text-decoration: none;
+            display: block;
+        }
+
         @media screen and (max-width: 1145px) {
-            
+            .block_contest{
+                display: none!important;
+            }
+
+            #myDropdown .dropdown{
+                display: none;
+            }
+            #myDropdown .contest_item_link{
+                display: block!important;
+            }
+            .contest_info{
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            .row_one {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .block_about{
+                margin-bottom: 40px;
+            }
+
+            .row_two {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 40px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .block_docx {
+                width: 35%;
+                text-align: center;
+                margin-bottom: 40px
+            }
+
+            .block_ruleCondect {
+                width: 100%;
+            }
+
+            .block_competition {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            footer {
+                background: rgba(0, 0, 0, 0.6);
+            }
+            .block_about{
+                width: auto;
+            }
+            .block_docx{
+                width: auto;
+            }
         }
     </style>
 {% endblock %}

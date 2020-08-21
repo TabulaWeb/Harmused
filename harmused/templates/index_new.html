@@ -54,6 +54,17 @@
 				<button onclick="myFunction()" class="dropbtn">	
 				</button>
 				<div id="myDropdown" class="dropdown-content">
+					
+						<a href="{% url 'registrations' %}" class="contest_info contest_item_link">
+							Info
+						</a>
+						<a href="{% url 'registrations' %}" class="contest_RM contest_item_link">
+							Road map
+						</a>
+						<a href="{% url 'registrations' %}" class="contest_name contest_item_link">
+							Pilot Contest 2020
+						</a>
+					
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">
@@ -229,6 +240,8 @@
 </script>
 
 <style>
+
+
 
 .dropbtn{
 	background: url(../static/assets/media/burger.png);
@@ -499,6 +512,9 @@ box-shadow: none;
 	display: none;
 }
 
+.contest_item_link{
+	display: none!important;
+}
 
 
 
