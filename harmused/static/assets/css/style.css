@@ -301,6 +301,42 @@ footer{
 	margin-top: 10px;
 }
 
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+  }
+  
+  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* Выпадающее содержимое (скрыто по умолчанию) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Ссылки внутри выпадающего списка */
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Изменение цвета выпадающих ссылок при наведении курсора */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+  .show {display:block;}
+
+
 @media (max-width: 1920px) and (min-width: 1361px){
 	.wrapper{
 		width: 1024px;
@@ -331,16 +367,14 @@ footer{
 	.wrapper{
 		width: 300px;
 	}
-	body{
-		background: #fff;
-	}
 	header{
 		margin-top: 0px;
-		background: rgba(0, 0, 0, 0.6);
+		background: rgba(0, 0, 0, 1);
 		position: fixed;
 		left: 0;
 		right: 0;
 		top: 0px;
+		z-index: 5;
 	}
 	.menu-mobile{
 		display: block;
@@ -370,7 +404,7 @@ footer{
 		width: 20px;
 	}
 	.label-logo{
-		height: 20px;
+		height: 40px;
 
 	}
 	.content{

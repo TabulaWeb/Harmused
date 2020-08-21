@@ -11,10 +11,35 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-
+	<script>
+		/* Когда пользователь нажимает на кнопку,
+	переключение между скрытием и отображением раскрывающегося содержимого */
+	function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	// Закройте выпадающее меню, если пользователь щелкает за его пределами
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+		  }
+		}
+	  }
+	}
+	</script>
 </head>
 <body>
 <header>
+
+
+
+
+
 <div class="wrapper">
 	<div class="header-block">
 		<div class="logo">
@@ -22,7 +47,64 @@
 				<img class="label-logo"  src="{% static 'assets/media/logo_white.png' %}">
 			</a>
 			<p>движение людей со страстью к музыке</p>
-		</div>	
+		</div>
+		
+		<div class="mobile_dropdown">
+			<div class="dropdown">
+				<button onclick="myFunction()" class="dropbtn">	
+				</button>
+				<div id="myDropdown" class="dropdown-content">
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Pages
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="{% url 'registrations' %}">Контакты</a>
+							<a class="dropdown-item" href="{% url 'registrations' %}">О портале</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Composition
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="{% url 'registrations' %}">Композиторы</a>
+							<a class="dropdown-item" href="{% url 'registrations' %}">Произведения</a>
+							<a class="dropdown-item" href="{% url 'registrations' %}">Гармония</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Design
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="{% url 'registrations' %}">Rehearsal studio</a>
+							<a class="dropdown-item" href="{% url 'registrations' %}">Shop store</a>
+							<a class="dropdown-item" href="{% url 'about' %}">Contest</a>
+						</div>
+					</div>
+					<div class="song">
+						<figure>
+							<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
+							<div class="button_block">
+								<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
+								<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button> -->
+							</div>
+							<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
+								Johann Sebastian Bach</div>
+						</figure>
+					</div>
+					<a class="auth" href="{% url 'registrations' %}">
+						<img src="{% static 'assets/media/auth.svg' %}">
+						Auth
+					</a>
+				</div>
+			  </div>
+		</div>
+
 		<div class="menu-block">
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -61,7 +143,7 @@
 					<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
 					<div class="button_block">
 						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
-						<button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button>
+						<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button> -->
 					</div>
 					<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
 						Johann Sebastian Bach</div>
@@ -87,7 +169,7 @@
 					<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
 					<div class="button_block">
 						<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
-						<button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button>
+						<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button> -->
 					</div>
 					<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
 						Johann Sebastian Bach</div>
@@ -147,6 +229,57 @@
 </script>
 
 <style>
+
+.dropbtn{
+	background: url(../static/assets/media/burger.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center center;
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {display:block;}
+
+.dropbtn{
+	background-color: inherit!important;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    outline: inherit;
+}
+
 .block_contest{
 	display: none;
 }
@@ -306,7 +439,234 @@ box-shadow: none;
     	border-radius: 10px;
     	align-self: baseline;
 	}
+
+
+
+
+
+
+
+	.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {display:block;}
+
+
+.mobile_dropdown{
+	display: none;
+}
+
+.mobile_dropdown_contest{
+	display: none;
+}
+
+
+
+
+
+
+	@media screen and (max-width: 1145px){
+
+
+
+		.mobile_dropdown{
+			display: flex;
+		}
+
+		.menu-block{
+			display: none!important;
+		}
+
+		.dropbtn img{
+			width: 25px;
+		}
+
+		.show{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.dropdown-content {
+			position: absolute;
+			background-color: rgba(0, 0, 0, 0.6);
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+
+		.dropdown, .dropleft, .dropright, .dropup {
+			position: static;
+    		display: contents;
+		}
+
+		.sound_title {
+			margin-left: 10px;
+			font-size: 12px;
+			color:#fff;
+		}
+
+		.dropdown-content a {
+			color: white;
+		}
+
+		.dropdown-menu.show {
+			display: block;
+			position: absolute;
+			transform: translate3d(-5px, 42px, 0px);
+			top: 8px!important;
+			left: 0px;
+			will-change: transform;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+
+		.footer-block {
+			padding: 20px 20px;
+			bottom: 0px;
+			position: relative;
+			background: rgba(0, 0, 0, 0.6);
+			/* background-blend-mode: luminosity; */
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column-reverse;
+			align-items: center;
+			margin-bottom: 0px;
+		}
+
+		.footer_text{
+			padding: 15px;
+    		align-self: auto;
+		}
+
+		.subscribe {
+    		width: 25%;
+    		text-align: center;
+		}
+
+
+	}
+	@media screen and (max-width: 600px){
+		.play_list{
+			width: 100%;
+		}
+
+		.page_home {
+    		margin-top: 40px;
+    		margin-bottom: 40px;
+		}
+
+		.footer-block {
+			background-color: inherit;
+		}
+
+		.subscribe {
+			width: 40%;
+			text-align: center;
+		}
+
+		.show {
+			top: 54px;
+			left: 0px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+
+		.dropdown-content {
+			background-color: rgba(0, 0, 0, 1);
+		}
+
+		.dropdown-content a {
+			color: white;
+			width: 100%;
+			text-align: center;
+		}
+
+		.dropdown-menu.show {
+			display: contents;
+		}
+
+		.btn:not(:disabled):not(.disabled) {
+			cursor: pointer;
+			width: 100%;
+			text-align: center;
+			display: block;
+			border-radius: 0px;
+		}
+	}
 </style>
+
+
+
+<script>
+	/* Когда пользователь нажимает на кнопку,
+переключение между скрытием и отображением раскрывающегося содержимого */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Закройте выпадающее меню, если пользователь щелкает за его пределами
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 
 </body>
 </html>
