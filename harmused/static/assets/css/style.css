@@ -231,6 +231,7 @@ header{
 	line-height: 16px;
 }
 .menu-block .auth{
+	display: flex;
 	padding: 7px 50px;
 	border: 1px solid #fff;
 	color: #fff;
