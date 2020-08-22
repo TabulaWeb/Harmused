@@ -99,13 +99,54 @@
 					</div>
 					<div class="song">
 						<figure>
-							<audio id="player" src="../files/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3"></audio>
-							<div class="button_block">
-								<button onclick="document.getElementById('player').play()" class="play_pause_icon play_pause-play"><img src="{% static 'assets/media/play.png' %}"></button>
-								<!-- <button onclick="document.getElementById('player').pause()" class="play_pause_icon play_pause-pause"><img src="{% static 'assets/media/pause.png' %}"></button> -->
+							<div class="holder">
+								<div class="audio green-audio-player">
+									<div class="loading">
+										<div class="spinner"></div>
+									</div>
+									<div class="play-pause-btn">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24">
+											<path fill="#566574" fill-rule="evenodd" d="M18 12L0 24V0" class="play-pause-icon"
+												id="playPause" />
+										</svg>
+									</div>
+									<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
+										Johann Sebastian Bach</div>
+									<div class="controls">
+
+										<span class="current-time">0:00</span>
+										<div class="slider" data-direction="horizontal">
+											<div class="progress">
+												<div class="pin" id="progress-pin" data-method="rewind"></div>
+											</div>
+										</div>
+										<span class="total-time">0:00</span>
+									</div>
+
+									<div class="volume">
+										<div class="volume-btn">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path fill="#566574" fill-rule="evenodd"
+													d="M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z"
+													id="speaker" />
+											</svg>
+										</div>
+										<div class="volume-controls hidden">
+											<div class="slider" data-direction="vertical">
+												<div class="progress">
+													<div class="pin" id="volume-pin" data-method="changeVolume"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<audio crossorigin>
+										<source src="{% static 'assets/media/Chaconne Partita No2 BWV 1004 Hilary Hahn.mp3' %}"
+											type="audio/mpeg">
+									</audio>
+								</div>
+
 							</div>
-							<div class="sound_title">Chaconne, Partita No. 2 BWV 1004 | Hilary Hahn<br>
-								Johann Sebastian Bach</div>
 						</figure>
 					</div>
 					<a class="auth" href="{% url 'registrations' %}">
@@ -499,8 +540,6 @@ function directionAware() {
 </script>
 
 <style>
-
-
 .holder {
   display: flex;
   flex-direction: column;
@@ -922,6 +961,8 @@ box-shadow: none;
 
 
 
+
+
 	@media screen and (max-width: 1145px){
 
 
@@ -1057,6 +1098,27 @@ box-shadow: none;
 			text-align: center;
 			display: block;
 			border-radius: 0px;
+		}
+
+		.logo{
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.auth img{
+			display: inline-block;
+		}
+
+		.block_music::after {
+			content: attr(data-title);
+			position: absolute;
+			right: 1px;
+			top: 1px;
+			z-index: 1;
+			font-family: Arial, sans-serif;
+			font-size: 11px;
+			padding: 5px 10px;
+			border: 1px solid #333;
 		}
 	}
 </style>

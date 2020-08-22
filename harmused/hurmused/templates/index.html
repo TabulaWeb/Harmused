@@ -3,6 +3,8 @@
 {% block content %}
     <div class="page_home">
         <div class="play_list">
+            <a class="link_contest" href="{% url 'about' %}">RUMI CONTEST >>>>></a>
+
             {% for musiks in musik_posts %}
             <a href="{{ musiks.get_absolute_url }}" class="block_music" data-title="Текст песни">
                 <div class="music_tittle">
@@ -22,6 +24,18 @@
 
 
     <style>
+a.link_contest{
+    font-family: 'Roboto'!important;
+    color: #ffffff;
+    padding: 9px;
+    font-weight: bold;
+    display: block;
+}
+
+.link_contest{
+    margin-bottom: 25px;
+}
+
 .block_music:hover::after {
     content: attr(data-title); /* Выводим текст */
     position: absolute; /* Абсолютное позиционирование */
