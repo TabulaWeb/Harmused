@@ -2,7 +2,12 @@
 
 {% block content %}
 <h1 class="title_sound">{{ musiks.title }}</h1>
-<p class="text_sound">{{ musiks.sound_text }}</p>
+
+<p class="text_sound">
+    {% autoescape off %}
+        {{ musiks.sound_text }}
+    {% endautoescape %}
+</p>
 
 <style>
     .logo a {
@@ -17,7 +22,7 @@
     }
     .text_sound{
         color: white;
-        max-width: 300px;
+        max-width: max-content;
         margin-left: auto;
         margin-right: auto;
         padding: 10px 15px;
