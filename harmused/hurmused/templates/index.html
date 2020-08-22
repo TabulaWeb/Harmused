@@ -4,26 +4,33 @@
     <div class="page_home">
         <div class="play_list">
             <a class="link_contest" href="{% url 'about' %}">RUMI CONTEST >>>>></a>
+            <div class="all_music_list">
+                {% for musiks in musik_posts %}
+                <a href="{{ musiks.get_absolute_url }}" class="block_music" data-title="Текст песни">
+                    <div class="music_tittle">
+                        {{ musiks.author_sound }}<br>
+                        {{ musiks.title }}  
+                    </div>
+                    <div class="dot">
 
-            {% for musiks in musik_posts %}
-            <a href="{{ musiks.get_absolute_url }}" class="block_music" data-title="Текст песни">
-                <div class="music_tittle">
-                    {{ musiks.author_sound }}<br>
-                    {{ musiks.title }}  
-                </div>
-                <div class="dot">
-
-                </div>
-                <div class="music_time">
-                    {{ musiks.play_time }}
-                </div>
-            </a>
-            {% endfor %}
+                    </div>
+                    <div class="music_time">
+                        {{ musiks.play_time }}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
 
     <style>
+
+.all_music_list{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 a.link_contest{
     font-family: 'Roboto'!important;
     color: #ffffff;
